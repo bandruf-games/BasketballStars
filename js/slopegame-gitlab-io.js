@@ -39,17 +39,20 @@ if (inFrame()) {
   return false;
 }
 let backlinksHTML= "";
-backlinksHTML= "<ul style=\"color: #ffffff; padding: 0px; margin: 0px;\">";
+backlinksHTML= "<ul style=\"color: #ffffff; padding: 0px; margin: 0px; font-size:18px;\">";
 backlinksHTML+= "<li style=\"padding: 10px; display: inline-block; float: left;\">"+
     "<a style=\"color: #ffffff; text-decoration: none;\" href= \"//slopegame.gitlab.io\">"+ decodeURIComponent(escape("\xF0\x9F\x8F\xA0")) +"</a>"+
     "</li>";
 for (let i=0; i< backlinksList.length; i++) {
-  backlinksHTML+= "<li style=\"padding: 10px; display: inline-block;font-family: \"Montserrat\";font-size:18px;font-weight:bold;\">"+
-      "<a style=\"color: #ffffff;\" href=\""+
+  backlinksHTML+= "<li style=\"padding: 10px; display: inline-block;font-family: \"Montserrat\";font-weight:bold;\">"+
+      "<a style=\"color: #ffffff;text-decoration: none;\" onMouseOver=\"this.style.color='#00ff00';this.style.textDecoration='underline';\" onMouseOut=\"this.style.color='#ffffff';this.style.textDecoration='none';\" href=\""+
       backlinksList[i].link+ "\">"+
       backlinksList[i].text+
       "</a>"+
       "</li>";
+
+  // onMouseOver="this.style.color='#0F0'"
+   // onMouseOut="this.style.color='#00F'"
 }
 backlinksHTML+= "<li style=\"padding: 10px; display: inline-block; float: right;\">"+
     "<a onclick= \"return closeBacklinks();\" style=\"color: #ffffff; text-decoration: none;\" href=\"#\">"+ decodeURIComponent(escape("\xE2\x9D\x8C")) +"</a>"+
